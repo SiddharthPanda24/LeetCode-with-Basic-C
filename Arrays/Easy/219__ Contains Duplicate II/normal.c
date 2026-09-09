@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 int main() {
     int nums[100], numsSize, k;
@@ -16,17 +17,13 @@ int main() {
     scanf("%d", &k);
 
     for(i = 0; i < numsSize; i++) {
-
         for(j = i + 1; j < numsSize; j++) {
 
             if(nums[i] == nums[j] && (j - i) <= k) {
-                printf("Nearby duplicate found: %d", nums[i]);
-                return 0;
+                return true;
             }
         }
     }
 
-    printf("No nearby duplicate found.");
-
-    return 0;
+    return false;
 }
